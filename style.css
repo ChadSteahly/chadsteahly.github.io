@@ -1,0 +1,390 @@
+/* ---------------------------------------------------------
+   Chad Steahly — portfolio
+   Palette:
+     cream   #FBF7EF  (page background)
+     ink     #1F1B16  (primary text)
+     muted   #5B5650  (secondary text)
+     rule    #DCD4C2  (hairlines)
+     pine    #2E5E55  (accent — links, active nav, highlights)
+   Tile tones (placeholder thumbnails only — swap for real stills):
+     pine #2E5E55 / rust #8B4A3A / olive #6B6B3E / slate #44586B / clay #8C6A4B
+   Type: monospace throughout (Space Mono / Liberation Mono),
+   echoing a shot list / EDL — a working editor's site, not a
+   marketing page.
+--------------------------------------------------------- */
+
+@font-face {
+  font-family: "Space Mono";
+  src: local("Space Mono");
+}
+
+:root {
+  --cream: #FBF7EF;
+  --ink: #1F1B16;
+  --muted: #5B5650;
+  --rule: #DCD4C2;
+  --pine: #2E5E55;
+  --rust: #8B4A3A;
+  --olive: #6B6B3E;
+  --slate: #44586B;
+  --clay: #8C6A4B;
+}
+
+/* Dark mode: follows system preference by default; data-theme attribute
+   (set by the toggle button, persisted in localStorage) overrides it. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --cream: #17150F;
+    --ink: #EFE9DA;
+    --muted: #9C9382;
+    --rule: #332E24;
+    --pine: #6FB3A0;
+  }
+}
+:root[data-theme="dark"] {
+  --cream: #17150F;
+  --ink: #EFE9DA;
+  --muted: #9C9382;
+  --rule: #332E24;
+  --pine: #6FB3A0;
+}
+
+/* ---------- theme toggle button ---------- */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--rule);
+  color: var(--muted);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 18px;
+  padding: 0;
+}
+.theme-toggle:hover { color: var(--ink); border-color: var(--muted); }
+.theme-toggle svg { width: 15px; height: 15px; }
+.theme-toggle .icon-moon { display: block; }
+.theme-toggle .icon-sun { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: block; }
+}
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Space Mono", "Liberation Mono", "DejaVu Sans Mono", monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+
+a { color: var(--pine); text-decoration: underline; text-decoration-color: var(--rule); }
+a:hover { text-decoration-color: var(--pine); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--pine); outline-offset: 3px; }
+
+img { max-width: 100%; display: block; }
+
+/* ---------- header / nav (shared across every page) ---------- */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  background: var(--cream);
+  z-index: 10;
+}
+.header-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 22px 24px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.header-id a { text-decoration: none; }
+.wordmark { font-weight: 700; font-size: 16px; color: var(--ink); }
+.tagline { display: block; font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+.nav a {
+  margin-left: 20px;
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--muted);
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+.nav a:hover { color: var(--ink); }
+.nav a[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 700;
+  border-bottom-color: var(--pine);
+}
+
+/* ---------- generic section scaffolding ---------- */
+.section { padding: 44px 24px; border-top: 1px solid var(--rule); }
+.section:first-of-type { border-top: none; }
+.section-label { font-size: 13px; font-weight: 700; margin: 0 0 26px; color: var(--ink); }
+.section-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin: -14px 0 26px;
+  max-width: 64ch;
+}
+
+/* ---------- page intro (top of Work / Reel / About) ---------- */
+.page-intro { padding: 48px 24px 8px; }
+.page-title { font-size: 20px; font-weight: 700; margin: 0 0 8px; }
+.page-dek { color: var(--muted); max-width: 64ch; margin: 0; }
+
+/* ---------- work grid ---------- */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.tile { text-decoration: none; color: var(--ink); display: block; }
+.tile-thumb {
+  aspect-ratio: 16/10;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.85);
+  background: var(--pine);
+  overflow: hidden;
+}
+.tile-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.tile:nth-of-type(5n+2) .tile-thumb { background: var(--rust); }
+.tile:nth-of-type(5n+3) .tile-thumb { background: var(--olive); }
+.tile:nth-of-type(5n+4) .tile-thumb { background: var(--slate); }
+.tile:nth-of-type(5n+5) .tile-thumb { background: var(--clay); }
+.tile-title { font-size: 13px; font-weight: 700; margin-top: 10px; }
+.tile-caption { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+@media (max-width: 760px) {
+  .work-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .work-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- reel frame (video embed) ---------- */
+.reel-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #10100E;
+  border: 1px solid var(--rule);
+}
+.reel-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.reel-frame.small { margin-top: 18px; }
+
+/* ---------- timecode breakdown (Reel page) ---------- */
+.timecode-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 32px;
+}
+.tc-row { padding: 14px 0; border-top: 1px solid var(--rule); }
+.timecode-list .tc-row:nth-child(1),
+.timecode-list .tc-row:nth-child(2) { border-top: none; }
+.tc-time { font-size: 12px; color: var(--muted); }
+.tc-title { font-weight: 700; margin: 2px 0; }
+.tc-credits { font-size: 12px; color: var(--muted); font-style: italic; }
+
+@media (max-width: 640px) {
+  .timecode-list { grid-template-columns: 1fr; }
+  .timecode-list .tc-row:nth-child(2) { border-top: 1px solid var(--rule); }
+}
+
+/* ---------- tagline animation (About page) ---------- */
+/* The GIF's icons are a fixed light gray, baked into the pixels — great
+   contrast on a dark background, washed out on the cream one. Since we
+   can't recolor the pixels themselves, we invert the RGB channels (alpha/
+   transparency is untouched by CSS invert) to flip gray-on-light into a
+   dark, legible tone — then undo that in dark mode, where the original
+   gray already reads fine against the near-black background. */
+.tagline-banner { padding: 36px 24px 0; }
+.tagline-gif {
+  max-width: 420px;
+  width: 100%;
+  filter: invert(1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .tagline-gif { filter: none; }
+}
+:root[data-theme="dark"] .tagline-gif { filter: none; }
+
+/* ---------- about page ---------- */
+.about-grid { display: grid; grid-template-columns: 180px 1fr; gap: 28px; align-items: start; }
+.about-photo {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: var(--muted);
+  object-fit: cover;
+  overflow: hidden;
+}
+.about-text p { margin: 0 0 16px; max-width: 64ch; }
+.metric-note { font-size: 12px; color: var(--muted); }
+
+.cert-list { margin: 0; padding-left: 18px; }
+.cert-list li { margin-bottom: 8px; }
+
+.quotes { margin-top: 10px; display: grid; gap: 18px; }
+blockquote {
+  margin: 0; padding-left: 16px; border-left: 2px solid var(--rule);
+  font-style: italic; color: var(--muted); max-width: 66ch;
+}
+blockquote cite { display: block; margin-top: 8px; font-style: normal; font-size: 13px; color: var(--ink); }
+
+/* ---------- contact page ---------- */
+.contact-grid { display: grid; gap: 10px; margin-bottom: 30px; }
+.contact-link { font-size: 15px; font-weight: 700; text-decoration: none; }
+.contact-link:hover { text-decoration: underline; }
+.resume-cta {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 10px 16px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+}
+.resume-cta:hover { background: var(--ink); color: var(--cream); }
+
+/* ---------- case study (project pages) ---------- */
+.case-head { padding: 48px 24px 0; }
+.back-link { font-size: 13px; }
+.case-title { font-size: 22px; font-weight: 700; margin: 14px 0 0; }
+
+.case-meta-row { display: flex; gap: 14px; font-size: 13px; padding: 5px 0; }
+.case-meta-key { width: 130px; flex-shrink: 0; color: var(--muted); }
+.case-meta-val { font-weight: 700; }
+
+.case-body p { margin: 0 0 16px; max-width: 68ch; }
+
+.case-figure { margin: 30px 0; }
+.case-figure .placeholder {
+  aspect-ratio: 16/9;
+  border: 1px solid var(--rule);
+  background: repeating-linear-gradient(45deg, var(--rule), var(--rule) 6px, transparent 6px, transparent 12px);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 12px;
+}
+.case-figure figcaption { font-size: 12px; color: var(--muted); margin-top: 8px; max-width: 64ch; }
+.case-figure img {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--rule);
+}
+.case-figure .reel-frame.portrait {
+  aspect-ratio: 9/16;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.case-nav {
+  display: flex; justify-content: space-between;
+  padding: 30px 24px 10px; font-size: 13px;
+}
+
+/* ---------- album pages (track-list player) ---------- */
+.album-cover {
+  aspect-ratio: 1;
+  width: 220px;
+  border: 1px solid var(--rule);
+  background: var(--rule);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 12px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.album-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.album-head-row { display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+.album-meta { padding-top: 4px; }
+.album-meta .case-meta-row { padding: 4px 0; }
+
+.track-list { margin-top: 10px; }
+.track-row {
+  display: grid;
+  grid-template-columns: 32px 32px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-top: 1px solid var(--rule);
+  position: relative;
+}
+.track-row:first-child { border-top: none; }
+.track-num { font-size: 12px; color: var(--muted); }
+.track-play {
+  width: 30px; height: 30px;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: none;
+  color: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+.track-play:hover { border-color: var(--pine); color: var(--pine); }
+.track-play svg { width: 12px; height: 12px; }
+.track-play .icon-pause { display: none; }
+.track-row.is-playing .track-play .icon-play { display: none; }
+.track-row.is-playing .track-play .icon-pause { display: block; }
+.track-row.is-playing .track-title { color: var(--pine); }
+.track-title { font-weight: 700; }
+.track-duration { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.track-progress {
+  position: absolute;
+  left: 0; bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--pine);
+}
+.album-note {
+  margin-top: 24px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ---------- footer (shared) ---------- */
+.site-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 28px 24px 48px; font-size: 12px; color: var(--muted);
+}
+.social-links { display: flex; gap: 14px; }
+.social-links a { color: var(--muted); display: inline-flex; }
+.social-links a:hover { color: var(--ink); }
+.social-links svg { width: 18px; height: 18px; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 640px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-photo { width: 130px; }
+  .nav a { margin-left: 13px; }
+  .case-meta-row { flex-direction: column; gap: 2px; }
+  .case-meta-key { width: auto; }
+}
