@@ -23,7 +23,7 @@ projects/
   pearson-etextbook.html               Case study (fully built out)
   pearson-educator-account.html        Case study (fully built out)
   illustrations-and-sketches.html      Gallery (fully built out)
-  vectors.html                         Gallery (VHS tape still a placeholder)
+  vectors.html                         Gallery (fully built out)
   photography.html                     Gallery (fully built out)
   autumn-cafe.html                     Case study (fully built out)
 audio/
@@ -130,8 +130,7 @@ pattern of showing the finished icon next to its Illustrator project
 file: Camera, cassette tape, roll of 35mm film, VHS tape,
 AI chat bot, clapboard, boombox, synthesizer, typewriter, Building brick, and
 Blocky. (The camera and brick were renamed from "Fujifilm X-T4 camera" and
-"LEGO brick".) All but the VHS tape are in place; that pair is still a
-placeholder. Role and Software/Hardware metadata came from the PDF (Artist,
+"LEGO brick".) All 11 pairs are now in place. Role and Software/Hardware metadata came from the PDF (Artist,
 Designer; Adobe Illustrator). Linked from its Work grid tile; no
 thumbnail set yet.
 
