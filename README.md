@@ -22,7 +22,7 @@ projects/
   jw-marriott-tourism.html             Case study (fully built out)
   pearson-etextbook.html               Case study (fully built out)
   pearson-educator-account.html        Case study (fully built out)
-  illustrations-and-sketches.html      Gallery (placeholders, curated)
+  illustrations-and-sketches.html      Gallery (fully built out)
   vectors.html                         Gallery (placeholders)
   photography.html                     Gallery (shortlist, placeholders)
   autumn-cafe.html                     Case study (shortlist, placeholders)
