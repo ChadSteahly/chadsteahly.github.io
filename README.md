@@ -25,7 +25,7 @@ projects/
   illustrations-and-sketches.html      Gallery (fully built out)
   vectors.html                         Gallery (placeholders)
   photography.html                     Gallery (fully built out)
-  autumn-cafe.html                     Case study (shortlist, placeholders)
+  autumn-cafe.html                     Case study (fully built out)
 audio/
   universe-unknown/          The 10 MP3s for that album
   midnight-sound-exile/      The 4 MP3s for that album
