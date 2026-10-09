@@ -5,6 +5,14 @@ with a custom domain. Mirrors the structure of the Squarespace site
 (Work / Reel / About / Contact) in the same cream-and-monospace system as
 the resume and cover letter, so all three read as one body of work.
 
+## Favicon
+
+`favicon.ico` (16/32/48 px), `favicon-16x16.png`, `favicon-32x32.png` and
+`apple-touch-icon.png` (180 px) in the repo root: a bold boxy "C" in cream
+on the site's pine green (#2E5E55). It is a simple geometric redraw chosen
+over the wide "CS" mark because it stays crisp at 16 px tab size. Every page
+links the icons in its `<head>` (`../` prefix on project pages).
+
 ## Structure
 
 ```
