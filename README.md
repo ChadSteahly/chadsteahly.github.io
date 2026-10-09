@@ -173,6 +173,20 @@ and `people-animation.gif` to match their real content. Assets live in
 with `thumbnail.gif` (the MyLab &amp; Mastering laptop scene) set as that
 tile's image.
 
+## How to link Pearson with Google Classroom
+
+`projects/pearson-google-classroom.html` replaces the old "Allow Pop-ups
+in Safari" tile (renamed). Built on the same template as the Educator
+Account page: metadata (Project, Client, Role, Software, Turnaround), an
+intro, the Vimeo embed (final edit), style frames, UI collage, and two
+custom animations (Subscribe button, outro). Assets live in
+`projects/pearson-google-classroom/`: the three animations are the
+original GIFs (each 28-37 MB, so upload them with GitHub Desktop or git
+rather than the browser, which caps files at 25 MB); the style frames and
+UI collage are WebP stills resized to 2400 px wide. `thumbnail.gif` is the
+Work grid tile image. Compressed animated-WebP versions of these and the
+other large GIFs exist in a separate backup and are not in use.
+
 Left out on purpose: the "Stock Footage vs. Color-Keyed and
 Motion-Tracked Composite Edit" comparison mentioned in the PDF, since no
 file was provided for it.
