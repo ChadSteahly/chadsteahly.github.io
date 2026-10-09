@@ -24,7 +24,7 @@ projects/
   pearson-educator-account.html        Case study (fully built out)
   illustrations-and-sketches.html      Gallery (fully built out)
   vectors.html                         Gallery (placeholders)
-  photography.html                     Gallery (shortlist, placeholders)
+  photography.html                     Gallery (fully built out)
   autumn-cafe.html                     Case study (shortlist, placeholders)
 audio/
   universe-unknown/          The 10 MP3s for that album
