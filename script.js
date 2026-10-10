@@ -15,21 +15,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // ---------------------------------------------------------------------------
-// SEASONAL: Halloween 2026
-// Everything below switches itself on only between HW_START and HW_END
-// (visitor's local time) and is inert the rest of the year, so it can be left
-// in place or deleted after the season. To preview before the window opens,
-// add ?halloween=1 to the homepage URL (index.html?halloween=1).
+// SEASONAL: Halloween (recurs every year)
+// Everything below switches itself on only between October 24 and November 1
+// each year (visitor's local time) and is inert the rest of the year. The
+// dates follow the current year automatically, and dismissing the bar is
+// remembered for that year only, so it returns every October. To preview
+// outside the window, add ?halloween=1 to the homepage URL
+// (index.html?halloween=1). To change the dates, edit HW_START/HW_END below.
 // What it does: swaps the favicon to the pumpkin on every page, and on the
 // homepage only adds a slim dismissible announcement line that opens the
 // Halloween animation in a lightbox (plays only when clicked).
 // ---------------------------------------------------------------------------
 (function () {
-  var HW_START = new Date(2026, 9, 24);   // Oct 24, 2026 00:00 local
-  var HW_END   = new Date(2026, 10, 2);   // Nov 2, 2026 00:00 local (exclusive)
-  var DISMISS_KEY = 'halloween2026-dismissed';
-  var forced = /[?&]halloween=1(&|$)/.test(window.location.search);
   var now = new Date();
+  var year = now.getFullYear();
+  var HW_START = new Date(year, 9, 24);   // Oct 24, 00:00 local
+  var HW_END   = new Date(year, 10, 2);   // Nov 2, 00:00 local (exclusive)
+  var DISMISS_KEY = 'halloween' + year + '-dismissed';
+  var forced = /[?&]halloween=1(&|$)/.test(window.location.search);
   var active = forced || (now >= HW_START && now < HW_END);
   if (!active) return;
 

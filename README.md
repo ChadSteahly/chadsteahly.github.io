@@ -5,22 +5,24 @@ with a custom domain. Mirrors the structure of the Squarespace site
 (Work / Reel / About / Contact) in the same cream-and-monospace system as
 the resume and cover letter, so all three read as one body of work.
 
-## Halloween 2026 (seasonal, self-expiring)
+## Halloween (seasonal, recurs every year)
 
 A slim dismissible announcement line appears at the top of the homepage only
 ("Happy Halloween - Watch the 10-second animation") and opens the animation in
 a lightbox that plays only when clicked (audio kept; Esc, the x, or a click
 outside closes it). All pages also swap to a pumpkin favicon. It shows
-automatically from Oct 24 to Nov 1, 2026 (visitor's local time) and does
-nothing outside that window. Preview any time with `index.html?halloween=1`.
-Dismissal is remembered per browser.
+automatically every year from Oct 24 to Nov 1 (visitor's local time; the dates
+follow the current year) and does nothing outside that window. Dismissing the
+bar is remembered per browser for that year only, so it returns the next
+October. Preview any time with `index.html?halloween=1`.
 
 Pieces: the block at the end of `script.js` (dates are `HW_START`/`HW_END`),
 the `.hw-*` block at the end of `style.css`, the `halloween/` folder (MP4 with
 audio, WebM, poster image) and `favicon-halloween*.png/.ico` in the root.
-To retire it, delete those pieces (nothing else depends on them). Favicon
-swapping works in Chrome, Edge and Firefox; Safari may keep the normal icon.
-The animation is not a Work-page tile, by choice.
+To swap in a new animation, replace the files in `halloween/` (keep the names).
+To retire the feature, delete those pieces (nothing else depends on them).
+Favicon swapping works in Chrome, Edge and Firefox; Safari may keep the
+normal icon. The animation is not a Work-page tile, by choice.
 
 ## Client work grid
 
