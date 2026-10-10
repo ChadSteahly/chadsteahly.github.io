@@ -5,6 +5,16 @@ with a custom domain. Mirrors the structure of the Squarespace site
 (Work / Reel / About / Contact) in the same cream-and-monospace system as
 the resume and cover letter, so all three read as one body of work.
 
+## Client work grid
+
+The Work page shows six client case studies, in this order: AI Study Tool,
+Academy Museum, Revel App, How to Link Pearson with Google Classroom,
+Destination, JW Marriott. The eTextbook and Educator Account tutorial pages
+are still live but no longer have tiles; they are linked from the "More
+tutorial videos" section at the bottom of the Google Classroom page. The
+Quick Setup tile was removed until that page is built (add it back to the
+`work-grid` in `index.html` using the same tile markup).
+
 ## Link previews
 
 Every page carries Open Graph and Twitter card tags (title and description
