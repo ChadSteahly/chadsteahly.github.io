@@ -5,6 +5,14 @@ with a custom domain. Mirrors the structure of the Squarespace site
 (Work / Reel / About / Contact) in the same cream-and-monospace system as
 the resume and cover letter, so all three read as one body of work.
 
+## Link previews
+
+Every page carries Open Graph and Twitter card tags (title and description
+match the page; URL is the https://chadsteahly.com address). All pages share
+one preview image, `social-preview.png` (1200 x 630, cream background, name,
+role line and headshot). To refresh a cached preview after changes, use
+LinkedIn Post Inspector or the Facebook Sharing Debugger.
+
 ## Favicon
 
 `favicon.ico` (16/32/48 px), `favicon-16x16.png`, `favicon-32x32.png` and
@@ -181,7 +189,7 @@ and `people-animation.gif` to match their real content. Assets live in
 with `thumbnail.gif` (the MyLab &amp; Mastering laptop scene) set as that
 tile's image.
 
-## How to link Pearson with Google Classroom
+## How to Link Pearson with Google Classroom
 
 `projects/pearson-google-classroom.html` replaces the old "Allow Pop-ups
 in Safari" tile (renamed). Built on the same template as the Educator
