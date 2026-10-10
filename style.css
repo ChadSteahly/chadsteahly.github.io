@@ -388,3 +388,37 @@ blockquote cite { display: block; margin-top: 8px; font-style: normal; font-size
   .case-meta-row { flex-direction: column; gap: 2px; }
   .case-meta-key { width: auto; }
 }
+
+
+/* ---- Seasonal: Halloween 2026 (pairs with the block at the end of script.js) ---- */
+.hw-bar { background: #17150F; color: #FBF7EF; font-size: 13px; }
+.hw-bar-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 9px; padding-bottom: 9px; }
+.hw-bar-text { flex: 1; text-align: center; }
+.hw-open {
+  background: none; border: 0; padding: 0; margin-left: 6px;
+  font: inherit; color: #FF8A00; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;
+}
+.hw-open:hover, .hw-open:focus-visible { color: #FFB04D; }
+.hw-dismiss {
+  background: none; border: 0; color: #FBF7EF; opacity: .7; cursor: pointer;
+  font-size: 20px; line-height: 1; padding: 2px 6px;
+}
+.hw-dismiss:hover, .hw-dismiss:focus-visible { opacity: 1; }
+.hw-bar button:focus-visible, .hw-close:focus-visible { outline: 2px solid #FF8A00; outline-offset: 2px; }
+.hw-overlay {
+  position: fixed; inset: 0; z-index: 1000; background: rgba(10, 8, 5, .88);
+  display: flex; align-items: center; justify-content: center; padding: 24px;
+}
+.hw-overlay[hidden] { display: none; }
+.hw-dialog { position: relative; width: min(960px, 100%); }
+.hw-video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+.hw-close {
+  position: absolute; top: -40px; right: 0; background: none; border: 0;
+  color: #FBF7EF; font-size: 30px; line-height: 1; cursor: pointer; padding: 4px 8px;
+}
+body.hw-lock { overflow: hidden; }
+@media (max-width: 560px) {
+  .hw-bar-text { text-align: left; }
+  .hw-open { display: inline; margin-left: 0; }
+}
