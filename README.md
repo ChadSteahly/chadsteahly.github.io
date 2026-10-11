@@ -42,6 +42,13 @@ one preview image, `social-preview.png` (1200 x 630, cream background, name,
 role line and headshot). To refresh a cached preview after changes, use
 LinkedIn Post Inspector or the Facebook Sharing Debugger.
 
+## Footer social links
+
+The footer of every page has LinkedIn, Instagram and Letterboxd icon links
+(`.social-links` in the page footer; styles in `style.css`). The Letterboxd
+icon is an inline SVG redraw of the three-dot mark in the footer's single
+color, not the official multicolor asset.
+
 ## Favicon
 
 `favicon.ico` (16/32/48 px), `favicon-16x16.png`, `favicon-32x32.png` and
@@ -60,7 +67,7 @@ contact.html              Contact — email, phone, socials, resume download
 projects/
   ai-study-tool.html       Case study template (worked example)
   universe-unknown.html     Album page — 10-track player
-  midnight-sound-exile.html Album page — 4-track player
+  midnight-sound-exile.html EP page — 4-track player
   academy-museum-brand-animation.html  Case study (placeholders)
   teach-with-the-revel-app.html        Case study (fully built out)
   destination.html                     Case study (fully built out)
@@ -73,7 +80,7 @@ projects/
   autumn-cafe.html                     Case study (fully built out)
 audio/
   universe-unknown/          The 10 MP3s for that album
-  midnight-sound-exile/      The 4 MP3s for that album
+  midnight-sound-exile/      The 4 MP3s for that EP
 style.css                  Shared styles for every page
 script.js                  Dark mode toggle button logic
 player.js                  Album track-list player logic
