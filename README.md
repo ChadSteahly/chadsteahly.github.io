@@ -403,7 +403,7 @@ Same process as before: create a GitHub repo, upload these files
 set the custom domain to chadsteahly.com, and update your domain's DNS
 records.
 
-One thing worth fixing on the registrar side while you're in there: the
-About/Contact pages list `chadsteahly@icloud.com`. iCloud Mail now
-supports custom domains, so `chad@chadsteahly.com` would match your
-branding more closely if you want to set that up.
+Email: the About and Contact pages list `chad@chadsteahly.com`, an iCloud
+custom email domain address. The DNS records for it (two TXT, two MX and one
+CNAME for DKIM) live at GoDaddy alongside the GitHub Pages records; leave
+all of them in place.
