@@ -86,7 +86,7 @@ script.js                  Dark mode toggle button logic
 player.js                  Album track-list player logic
 CNAME                      Tells GitHub Pages to serve chadsteahly.com
 tagline-animation.gif      Animated tagline, used at the top of About
-resume.pdf                  (add this) — linked from the Contact page
+Chad-Steahly-Resume.pdf     — resume, linked from the Contact page button
 headshot.webp                 Your headshot — already in place on About
 ```
 
@@ -371,7 +371,7 @@ trimming the frame count would help.
 
 ## Before you publish
 
-1. **Add your resume.** Drop a file named `resume.pdf` in this same folder
+1. **Resume.** The Contact page button links to `Chad-Steahly-Resume.pdf` in this same folder; to update the resume, replace that file (keep the name)
    — the Contact page already links to it.
 2. **Swap in your reel.** In `reel.html`, the Vimeo embed is already wired
    to your reel (ID 821691392). If you update the reel itself, just swap
