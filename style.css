@@ -200,20 +200,16 @@ img { max-width: 100%; display: block; }
 
 /* ---------- timecode breakdown (Reel page) ---------- */
 .timecode-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 32px;
+  column-count: 2;
+  column-gap: 32px;
 }
-.tc-row { padding: 14px 0; border-top: 1px solid var(--rule); }
-.timecode-list .tc-row:nth-child(1),
-.timecode-list .tc-row:nth-child(2) { border-top: none; }
+.tc-row { padding: 14px 0; border-bottom: 1px solid var(--rule); break-inside: avoid; -webkit-column-break-inside: avoid; }
 .tc-time { font-size: 12px; color: var(--muted); }
 .tc-title { font-weight: 700; margin: 2px 0; }
 .tc-credits { font-size: 12px; color: var(--muted); font-style: italic; }
 
 @media (max-width: 640px) {
-  .timecode-list { grid-template-columns: 1fr; }
-  .timecode-list .tc-row:nth-child(2) { border-top: 1px solid var(--rule); }
+  .timecode-list { column-count: 1; }
 }
 
 /* ---------- tagline animation (About page) ---------- */
