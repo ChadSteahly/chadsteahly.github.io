@@ -24,10 +24,21 @@ To retire the feature, delete those pieces (nothing else depends on them).
 Favicon swapping works in Chrome, Edge and Firefox; Safari may keep the
 normal icon. The animation is not a Work-page tile, by choice.
 
+## How to Sync Pearson Grades with Your LMS
+
+`projects/pearson-lms-grade-sync.html` is built on the Google Classroom page
+template: Vimeo embed (final edit), style frames, UI and graphics collage
+(transparent WebP), and six custom animation GIFs (composite shot, system,
+sync, squares, diamond, arrow). The page lists
+Project, Client, Role (same as Google Classroom), Software and a 2-week
+Turnaround, with the brief in two paragraphs. The page is not a tile on the Work page; it is linked from the "More tutorial
+videos" lists. The six GIFs are 30-48 MB each (about 237 MB for the page), so
+they use `loading="lazy"` and must be uploaded with GitHub Desktop or git.
+
 ## Client work grid
 
 The Work page shows six client case studies, in this order: AI Study Tool,
-Academy Museum, Revel App, How to Link Pearson with Google Classroom,
+Academy Museum, Revel App, How to Sync Pearson Grades with Your LMS,
 Destination, JW Marriott. The eTextbook and Educator Account tutorial pages
 are still live but no longer have tiles; they are linked from the "More
 tutorial videos" section at the bottom of the Google Classroom page. The
