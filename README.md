@@ -97,7 +97,8 @@ script.js                  Dark mode toggle button logic
 player.js                  Album track-list player logic
 CNAME                      Tells GitHub Pages to serve chadsteahly.com
 tagline-animation.gif      Animated tagline, used at the top of About
-Chad-Steahly-Resume.pdf     — resume, linked from the Contact page button
+Chad-Steahly-Resume-Media.pdf — media & entertainment resume, first Contact page button
+Chad-Steahly-Resume.pdf     — video production & content strategy resume, second button
 headshot.webp                 Your headshot — already in place on About
 ```
 
