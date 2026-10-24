@@ -35,6 +35,16 @@ Turnaround, with the brief in two paragraphs. The page is not a tile on the Work
 videos" lists. The six GIFs are 30-48 MB each (about 237 MB for the page), so
 they use `loading="lazy"` and must be uploaded with GitHub Desktop or git.
 
+## 24/60 Film Productions Logo & Branding
+
+`projects/24-60-film-productions.html` is a case study for the logo and
+brand assets built for 24/60 Film Productions: final logo animation (Vimeo),
+logo variations, the fly-in animation GIF (7 MB), the After Effects project,
+avatar, banner, and a thumbnail with the logo as a watermark. Assets are in
+`projects/24-60-film-productions/` (stills as WebP, resized from the originals).
+It is not a tile on the Work page; it is linked from the bottom of the Academy
+Museum page ("More logo animation"), and links back to it.
+
 ## Client work grid
 
 The Work page shows six client case studies, in this order: AI Study Tool,
